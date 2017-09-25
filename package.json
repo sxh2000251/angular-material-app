@@ -16,9 +16,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "npm run build",
-    "build:electron:mac": "electron-packager .",
-    "build:electron:win": "electron-packager ."
+    "build:electron": "npm run build",
+    "build:darwin": "electron-packager . --platform=darwin",
+    "build:win32": "electron-packager . --platform=win32"
   },
   "private": true,
   "dependencies": {
