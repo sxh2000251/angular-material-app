@@ -1,12 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MdAutocompleteModule, MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule,
-  MdGridListModule, MdIconModule, MdInputModule, MdListModule,
-  MdMenuModule, MdNativeDateModule, MdProgressBarModule, MdProgressSpinnerModule, MdSelectModule,
+  MdAutocompleteModule,
+  MdButtonModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdDatepickerModule,
+  MdDialogModule,
+  MdGridListModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdNativeDateModule,
+  MdProgressBarModule,
+  MdProgressSpinnerModule,
+  MdSelectModule,
   MdSidenavModule,
   MdSliderModule,
-  MdSlideToggleModule, MdSnackBarModule, MdTabsModule, MdToolbarModule, MdTooltipModule
+  MdSlideToggleModule,
+  MdSnackBarModule,
+  MdTabsModule,
+  MdToolbarModule,
+  MdTooltipModule,
+  MdRadioModule
 } from '@angular/material';
 
 @NgModule({
@@ -36,7 +53,8 @@ import {
     MdNativeDateModule,
     MdProgressBarModule,
     MdProgressSpinnerModule,
-    MdSelectModule
+    MdSelectModule,
+    MdRadioModule
   ]
 })
 export class MaterialComponentsModule { }

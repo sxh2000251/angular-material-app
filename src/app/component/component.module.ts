@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialComponentsModule } from './material.module';
 import { FormsModule } from '@angular/forms';
-import { ComponentComponent } from './component.component';
+import { MaterialComponentsModule } from '../shared/material.module';
 
 import { MarkdownComponent } from './markdown/markdown.component';
 import { PaginationComponent } from './pagination/pagination.component';
@@ -21,7 +20,6 @@ import { TableComponent } from './table/table.component';
   ],
   declarations: [
     PaginationComponent,
-    ComponentComponent,
     MarkdownComponent,
     PopoverComponent,
     PopoverDirective,
