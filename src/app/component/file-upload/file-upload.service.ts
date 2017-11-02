@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import * as firebase from 'firebase';
+import { Observable } from 'rxjs/Observable';
 import { Upload } from './file-upload.model';
 
 @Injectable()
 export class FileUploadService {
 
-  private basePath:string = '/uploads';
-  uploads: FirebaseListObservable<Upload[]>;
+  private basePath: string = '/uploads';
+  uploadsRef: AngularFireList<Upload>;
+  uploads: Observable<Upload[]>;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) {
+  }
 
-  getUploads(query={}) {
-    this.uploads = this.db.list(this.basePath, {query: query});
+  getUploads(query = {}) {
+    this.uploads = this.db.list(this.basePath).valueChanges();
 
     return this.uploads;
   }
 
-  pushUpload(upload:Upload) {
+  pushUpload(upload: Upload) {
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
 
@@ -34,7 +37,7 @@ export class FileUploadService {
     });
   }
 
-  deleteUpload(upload:Upload) {
+  deleteUpload(upload: Upload) {
     this.deleteFileStorage(upload.name);
   }
 

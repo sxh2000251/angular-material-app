@@ -11,8 +11,7 @@ $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-tool
 .header {
   min-height: $height__chat-header;
   max-height: $height__chat-header;
-  background: #039be5 url('/assets/images/background/header-bg.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #3f51b5;
 }
 
 .chat-container {
@@ -26,20 +25,20 @@ $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-tool
     background: white;
     height: 100%;
 
-    md-sidenav {
+    mat-sidenav {
       width: 320px;
     }
   }
 
 }
 
-.cdk-focus-trap-content, md-sidenav {
+.cdk-focus-trap-content, mat-sidenav {
   overflow-y: hidden !important;
   overflow-x: hidden;
 }
 
-md-sidenav.mat-sidenav-opened.mat-elevation-z2, md-sidenav.mat-sidenav-opening.mat-elevation-z2 {
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+mat-sidenav.mat-sidenav-opened.mat-elevation-z2, mat-sidenav.mat-sidenav-opening.mat-elevation-z2 {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
 .avatar {
@@ -49,4 +48,10 @@ md-sidenav.mat-sidenav-opened.mat-elevation-z2, md-sidenav.mat-sidenav-opening.m
   line-height: 40px;
   border-radius: 50%;
   text-align: center;
+}
+
+.chat-tips {
+  color: #fff;
+  font-size: 16px;
+  padding-top: 10px;
 }

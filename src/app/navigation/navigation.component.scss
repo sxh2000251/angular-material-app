@@ -1,10 +1,9 @@
 @import '~@angular/material/_theming';
-$navigation-font-family: Roboto, 'Helvetica Neue', sans-serif !default;
+
 $navigation-font-size-base: 14px !default;
 $navigation-border-radius: 2px !default;
 
-
-md-card {
+mat-card {
   padding: 10px;
   margin: 10px;
 }
@@ -43,23 +42,53 @@ md-card {
   padding: 0 5px;
   border-radius: $navigation-border-radius;
   font-size: $navigation-font-size-base;
-  font-family: $navigation-font-family;
   font-weight: 500;
   text-align: center;
   line-height: 28px;
   cursor: default;
 }
 
-.nav-category-title {
-  color: #333;
-}
-
 .nav-item {
-  transition: all 0.6s cubic-bezier(0.165,0.84,0.44,1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: default;
 
   &:hover {
-    transform: translate(0,-8px);
-    box-shadow: 0 40px 40px rgba(0,0,0,.16)
+    transform: translate(0, -8px);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .16)
+  }
+}
+
+
+// test skeleton screen
+.card-loading-content p {
+  margin: 0;
+}
+.card-loading-block {
+  display: inline-block;
+  margin: 5px 2% 0 0;
+  height: 14px;
+  border-radius: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(207, 216, 220, 0.2)), color-stop(rgba(207, 216, 220, 0.4)), to(rgba(207, 216, 220, 0.2)));
+  background: -webkit-linear-gradient(left, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+  background: linear-gradient(90deg, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+  animation: card-loading 1.4s ease infinite;
+  background-size: 600% 600%;
+}
+@-webkit-keyframes card-loading {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes card-loading {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }

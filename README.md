@@ -1,4 +1,4 @@
-# 通用管理系统快速开发框架 [![国内demo](https://img.shields.io/badge/%e5%9b%bd%e5%86%85-demo-brightgreen.svg?style=flat-square)](http://stbui.oss-cn-beijing.aliyuncs.com/)  [![国外demo](https://img.shields.io/badge/%e5%9b%bd%e5%a4%96-demo-brightgreen.svg?style=flat-square)](https://surgeon-canary-67612.netlify.com/)  [![github](https://img.shields.io/badge/github-demo-brightgreen.svg?style=flat-square)](https://stbui.github.io/angular-material-app/) [![国外doc](https://img.shields.io/badge/%e5%9b%bd%e5%a4%96-doc-brightgreen.svg?style=flat-square)](https://translator-rhinoceros-87537.netlify.com/)
+# 通用管理系统快速开发框架 [![国内demo](https://img.shields.io/badge/%e5%9b%bd%e5%86%85-demo-brightgreen.svg?style=flat-square)](http://stbui.oss-cn-beijing.aliyuncs.com/angular-material-app/index.html)  [![国外demo](https://img.shields.io/badge/%e5%9b%bd%e5%a4%96-demo-brightgreen.svg?style=flat-square)](https://surgeon-canary-67612.netlify.com/)  [![github](https://img.shields.io/badge/github-demo-brightgreen.svg?style=flat-square)](https://stbui.github.io/angular-material-app/) [![国外doc](https://img.shields.io/badge/%e5%9b%bd%e5%a4%96-doc-brightgreen.svg?style=flat-square)](https://translator-rhinoceros-87537.netlify.com/)
 
 基于最新`Angular 4`框架与`Material 2`技术的企业级通用管理系统快速开发框架，涵盖了大量的常用组件和基础功能，您可以快速开发各种MIS系统，如CMS、OA、CRM、ERP、POS等，最大程度上帮助企业节省时间成本和费用开支。
 
@@ -13,8 +13,8 @@
 ### 平台环境
 
 [![Angular](https://img.shields.io/badge/Angular%204-4.0.0-brightgreen.svg?style=flat-square)](https://github.com/angular/angular)
-[![Angular-cli](https://img.shields.io/badge/Angular.cli-1.2.5-brightgreen.svg?style=square)](https://github.com/angular/angular-cli)
-[![Angular Mateiral 2](https://img.shields.io/badge/Material%202-2.0.0.beta.10-brightgreen.svg?style=square)](https://github.com/angular/material2)
+[![Angular-cli](https://img.shields.io/badge/Angular.cli-1.4.2-brightgreen.svg?style=square)](https://github.com/angular/angular-cli)
+[![Angular Mateiral 2](https://img.shields.io/badge/Material%202-2.0.0.beta.12-brightgreen.svg?style=square)](https://github.com/angular/material2)
 [![Flex-Layout](https://img.shields.io/badge/Flex.Layout-2.0.0.beta.9-brightgreen.svg?style=square)](https://github.com/angular/flex-layout)
 
 
@@ -47,6 +47,8 @@ cd angular-material-app
 npm install
 npm run start
 ```
+[![步骤](https://asciinema.org/a/1lEYxaqemXl3coe9kiAvHRh7d.png)](https://asciinema.org/a/1lEYxaqemXl3coe9kiAvHRh7d)
+
 打开你的浏览器，访问
 ```
 http://127.0.0.1:4200
@@ -59,39 +61,101 @@ npm run build
 ```
 
 
-### Docker
+# Docker
 
-快速部署
+## 起步
 
+* 构建镜像
+```
+docker build -t angular-material-app .
+```
+
+* 运行容器
+```
+docker run -d -p 8080:8080 --name angular-material-app --restart always angular-material-app
+```
+
+## 快速部署
+拉取docker仓库中的镜像
 ```
 docker run -d -P stbui/angular-material-app
 ```
 
 
-### Firebase
+# Electron
 
-> Authentication
+使用Electron构建桌面应用
+
+## 项目分支
 ```
-npm install firebase angularfire2 --save
+feature/electron
 ```
 
-> hosting
-安装 Firebase cli
+## 起步
+
+* 构建静态资源
+```
+npm run build:electron
+```
+* 启动项目
+```
+npm run electron
+```
+
+## 打包
+
+* mac 平台
+```
+npm run build:darwin
+```
+* window 平台
+```
+npm run build:win32
+```
+
+
+# Firebase
+
+主要对接功能：
+* google 登录
+* github 登录
+* 游客登录
+* 邮箱登录与注册
+* 文件上传模块
+* 聊天应用模块
+
+## 项目分支
+```
+feature/firebase
+```
+
+## 起步（教程）
+
+### hosting
+
+* 安装 Firebase cli
 ```
 npm install -g firebase-tools
 ```
+
+* 登录firebase
 ```
 firebase login
+```
+
+* 初始化成firebase
+```
 firebase init
+```
+
+* 推送到firebase
+```
 firebase deploy
 ```
 
-
-### Electron
-
+### Authentication
 ```
-npm run build:mac
+npm install firebase angularfire2 --save
 ```
-
 
 ### Universal

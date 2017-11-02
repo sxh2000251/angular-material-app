@@ -2,17 +2,15 @@ $height__chat-header: 150px;
 $height__chat-toolbar: 64px;
 $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-toolbar});
 
-
 .chat-inner-container {
   height: 100%;
 
   .chat-content {
     position: relative;
-    background: url('/assets/img/backgrounds/arch-pattern.png') repeat;
     height: calc(100% - #{$height__chat-toolbar + 1});
 
     perfect-scrollbar {
-      margin-bottom: 103px;
+      //margin-bottom: 103px;
     }
 
     .messages-container {
@@ -24,7 +22,7 @@ $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-tool
         .message {
           padding: 8px;
           position: relative;
-          box-shadow: 0 0px 0px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+          box-shadow: 0 0 0 -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
         }
 
         .partner {
@@ -87,8 +85,7 @@ $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-tool
   }
 }
 
-
-md-toolbar {
+mat-toolbar {
   border-bottom: 1px solid #EEE;
 
   .toolbar {
@@ -110,4 +107,8 @@ md-toolbar {
       color: #888;
     }
   }
+}
+
+.pointer {
+  cursor: default;
 }

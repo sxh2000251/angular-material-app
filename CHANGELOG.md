@@ -1,10 +1,25 @@
-# 0.5.0 (2017.10.27)
+# 0.5.0 (2017.*.*)
 
 ### 更新
 
 * **angular：** 更新到`5.0.0`
-* **material：**  更新到`2.0.0-beta.10`
-* **cdk：** 更新到`2.0.0-beta.10`
+
+# 0.4.11
+
+### 更新
+* **angular：** 更新到`4.2.4`
+
+### 功能优化
+* **navigation: ** 增加 skeleton screen 
+* **scss：** 添加几种渐变效果
+
+
+# 0.4.10 (2017.10.13)
+
+### 更新
+
+* **material：**  更新到`2.0.0-beta.12`
+* **cdk：** 更新到`2.0.0-beta.12`
 * **flex-layout：**  更新到`2.0.0-beta.9`
 
 ### 功能实现
@@ -15,6 +30,9 @@
 * **file upload：** 增加文件上传模块, 对接firebase存储
 * **electron：** 新增分支feature/electron, 进行桌面应用开发
 * **apm：**  新增前端监控模块
+* **chats：**  接入firebase 可以实时聊天
+* **moduel：**  更新crm profile user widget project
+
 
 ### 功能优化
 
@@ -23,7 +41,7 @@
 * 优化navitation模块css效果
 * 优化comment/search组件
 * 优化mail模块搜索
-
+* 优化主题切换
 
 
 # 0.4.9 (2017.09.8)

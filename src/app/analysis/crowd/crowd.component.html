@@ -1,16 +1,36 @@
 <div fxLayout="row" fxLayoutWrap>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>最偏好领域TOP5</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>最偏好领域TOP5</mat-card-title>
+      <mat-card-content>
 
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>人群应用渗透TOP10</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>人群应用渗透TOP10</mat-card-title>
+      <mat-card-content>
+        <div class="card-loading-content" *ngIf="barChartData[0].data.length <= 0">
+          <p class="card-loading-block" style="width: 94%"></p>
+          <p>
+            <span class="card-loading-block" style="width: 28%"></span>
+            <span class="card-loading-block" style="width: 62%"></span>
+          </p>
+          <p>
+            <span class="card-loading-block" style="width: 22%"></span>
+            <span class="card-loading-block" style="width: 66%"></span>
+          </p>
+          <p>
+            <span class="card-loading-block" style="width: 56%"></span>
+            <span class="card-loading-block" style="width: 39%"></span>
+          </p>
+          <p>
+            <span class="card-loading-block" style="width: 21%"></span>
+            <span class="card-loading-block" style="width: 15%"></span>
+            <span class="card-loading-block" style="width: 40%"></span>
+          </p>
+        </div>
         <canvas baseChart height="150px"
                 [datasets]="barChartData"
                 [labels]="barChartLabels"
@@ -18,75 +38,75 @@
                 [legend]="barChartLegend"
                 [chartType]="barChartType"></canvas>
 
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
 <div fxLayout="row" fxLayoutWrap>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>人群年龄分布TOP3</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>人群年龄分布TOP3</mat-card-title>
+      <mat-card-content>
         <canvas baseChart height="150px"
                 [data]="angeChartData"
                 [labels]="angeChartLabels"
                 [chartType]="doughnutChartType"></canvas>
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>人群消费能力分布TOP3</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>人群消费能力分布TOP3</mat-card-title>
+      <mat-card-content>
         <canvas baseChart height="150px"
                 [data]="doughnutChartData"
                 [labels]="doughnutChartLabels"
                 [chartType]="doughnutChartType"></canvas>
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
 <div fxLayout="row" fxLayoutWrap>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>人群性别比例</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>人群性别比例</mat-card-title>
+      <mat-card-content>
 
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>人群地域覆盖TOP3</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>人群地域覆盖TOP3</mat-card-title>
+      <mat-card-content>
 
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
 <div fxLayout="row" fxLayoutWrap>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>最爱设备品牌TOP3</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>最爱设备品牌TOP3</mat-card-title>
+      <mat-card-content>
 
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
   <div fxFlex.gt-sm="50">
-    <md-card>
-      <md-card-title>运营商分布</md-card-title>
-      <md-card-content>
+    <mat-card>
+      <mat-card-title>运营商分布</mat-card-title>
+      <mat-card-content>
         <canvas baseChart height="150px"
                 [data]="pieChartData"
                 [labels]="pieChartLabels"
                 [chartType]="pieChartType"></canvas>
 
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 

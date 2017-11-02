@@ -17,10 +17,14 @@ import { AppRoutingModule } from './app.routing';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 
-import { environment } from '../environments/environment';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 import { CoreModule } from './core/core.module';
+
+import { FireBaseComponentsModule } from './shared/firebase.module';
 
 @NgModule({
   declarations: [
@@ -40,10 +44,10 @@ import { CoreModule } from './core/core.module';
     HeaderModule,
     SidenavModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    FireBaseComponentsModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
   providers: [],
   bootstrap: [AppComponent]

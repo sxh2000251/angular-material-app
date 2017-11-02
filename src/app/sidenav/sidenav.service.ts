@@ -30,7 +30,7 @@ export class SidenavService {
     this.addSubItem(materials, 'Toast', '/materials/toast', 3);
     this.addSubItem(materials, 'Snack-Bar', '/materials/snackbar', 3);
 
-    const components = this.addItem('拓展组件', 'equalizer', null, 3, '1','#4CAF50');
+    const components = this.addItem('拓展组件', 'equalizer', null, 3, '1', '#4CAF50');
     this.addSubItem(components, '高德地图', '/materials/amap', 1);
     this.addSubItem(components, 'Markdown', '/materials/markdown', 1);
     this.addSubItem(components, '图表', '/components/chart', 1);
@@ -52,13 +52,13 @@ export class SidenavService {
     // this.addSubItem(pages, '服务', '/pages/services', 1);
     // this.addSubItem(pages, '联系', '/pages/contact', 1);
     // this.addSubItem(pages, '团队', '/pages/terms', 1);
-    // this.addSubItem(pages, '反馈', '/pages/faqs', 1);
+    this.addSubItem(pages, '文件管理', '/pages/file-manager', 1);
     this.addSubItem(pages, '团队管理', '/', 1);
-    this.addSubItem(pages, '项目管理', '/', 1);
+    this.addSubItem(pages, '项目管理', '/pages/projects', 1);
     this.addSubItem(pages, '联系人', '/', 1);
     this.addSubItem(pages, '个人资料', '/pages/profile', 1);
     this.addSubItem(pages, '博客', '/pages/blog', 1);
-    this.addSubItem(pages, '收藏神器', '/pages/collection', 1);
+    // this.addSubItem(pages, '收藏神器', '/pages/collection', 1);
     this.addSubItem(pages, '用户管理', '/pages/user', 1);
 
     const extraPages = this.addItem('扩展页面', 'more_horiz', null, 8);
@@ -88,7 +88,7 @@ export class SidenavService {
     this.addSubItem(crm, '商机', '/crm/lead', 1);
     this.addSubItem(crm, '产品', '/crm/lead', 1);
 
-    const apm = this.addItem('前端监控', 'code', null, 9, 'new','#3F51B5');
+    const apm = this.addItem('前端监控', 'code', null, 9, 'new', '#3F51B5');
     this.addSubItem(apm, '脚本异常', '/apm/error', 1);
     this.addSubItem(apm, '性能分析', '/apm/performance', 1);
 
@@ -128,7 +128,7 @@ export class SidenavService {
   }
 
   removeItem(item: SidenavItem) {
-    let index = this._items.indexOf(item);
+    const index = this._items.indexOf(item);
     if (index > -1) {
       this._items.splice(index, 1);
     }
@@ -137,7 +137,7 @@ export class SidenavService {
   }
 
   isOpen(item: SidenavItem) {
-    return (this._currentlyOpen.indexOf(item) != -1);
+    return (this._currentlyOpen.indexOf(item) !== -1);
   }
 
   toggleCurrentlyOpen(item: SidenavItem) {
@@ -172,9 +172,9 @@ export class SidenavService {
   }
 
   nextCurrentlyOpenByRoute(route: string) {
-    let currentlyOpen = [];
+    const currentlyOpen = [];
 
-    let item = this.findByRouteRecursive(route, this._items);
+    const item = this.findByRouteRecursive(route, this._items);
 
     // if (item && item.hasParent()) {
     //   currentlyOpen = this.getAllParents(item);
@@ -186,17 +186,17 @@ export class SidenavService {
   }
 
   findByRouteRecursive(route: string, collection: SidenavItem[]) {
-    let result = collection.filter((item)=> {
-      if(item.route === route) {
+    let result = collection.filter((item) => {
+      if (item.route === route) {
         return item;
       }
     });
 
 
     if (!result) {
-      collection.forEach((item)=> {
+      collection.forEach((item) => {
         if (item.hasSubItems()) {
-          let found = this.findByRouteRecursive(route, item.subItems);
+          const found = this.findByRouteRecursive(route, item.subItems);
 
           if (found) {
             result = found;

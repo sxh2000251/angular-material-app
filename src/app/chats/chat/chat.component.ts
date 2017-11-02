@@ -1,12 +1,13 @@
-import { Component, Input, Inject, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
-import { PerfectScrollbarComponent, PerfectScrollbarDirective, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { Component, Input, Inject, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { NoticeComponent } from '../notice/notice.component';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent {
 
   @Input() chatSidenav;
   @Input() activeChat;
@@ -16,15 +17,10 @@ export class ChatComponent implements OnInit {
   newMessage: string;
   avatar: string = 'assets/images/avatars/noavatar.png';
 
-  public config: PerfectScrollbarConfigInterface = {};
-  @ViewChild(PerfectScrollbarComponent) componentScroll: PerfectScrollbarComponent;
-  @ViewChild(PerfectScrollbarDirective) directiveScroll: PerfectScrollbarDirective;
+  animal: string;
+  name: string;
 
-  constructor(@Inject('ChatsService') private service) {
-  }
-
-  ngOnInit() {
-    this.directiveScroll.scrollToBottom();
+  constructor(@Inject('ChatsService') private service, public dialog: MatDialog) {
   }
 
   onSendTriggered() {
@@ -40,7 +36,6 @@ export class ChatComponent implements OnInit {
       this.newMessage = '';
     }
 
-    this.directiveScroll.scrollToBottom();
   }
 
   clearMessages(activeChat) {
@@ -49,6 +44,18 @@ export class ChatComponent implements OnInit {
 
   onChatSideTriggered() {
     this.chatSidenav.toggle();
+  }
+
+  onNoticeTriggered() {
+    const dialogRef = this.dialog.open(NoticeComponent, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 
 }
